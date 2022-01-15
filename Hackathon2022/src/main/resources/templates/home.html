@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <meta charset="ISO-8859-1">
 <title>Home</title>
@@ -26,11 +26,24 @@ body
 
 </head>
 <body>
+
+<div th:if="${param.logout}" style="color:red;">
+You have been logged out 
+</div>
+
+
 <h1> TODO add content</h1>
 <a href="/login">Login</a>
 <a href="/signUp">Sign up</a>
 <a href="/addTask">Add Tasks</a>   <!-- Links for going to each page, they can be added into a list to make a top navigation bar -->
-<a href="/addTime">Add Time</a>
 <a href="/displayTasks">View Tasks</a>
+
+<div sec:authorize="isAuthenticated()">
+<form method="post" th:action="@{/logout}">
+<input type="submit" value="Logout">
+</form>  
+</div>
+
+</form> 
 </body>
 </html>

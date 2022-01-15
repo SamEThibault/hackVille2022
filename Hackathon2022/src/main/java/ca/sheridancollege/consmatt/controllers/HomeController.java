@@ -1,17 +1,23 @@
 package ca.sheridancollege.consmatt.controllers;
 
+import java.security.Principal;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import ca.sheridancollege.consmatt.beans.Task;
-import ca.sheridancollege.consmatt.beans.Time;
 import ca.sheridancollege.consmatt.repositories.TaskRepository;
-import ca.sheridancollege.consmatt.repositories.TimeRepository;
+
 
 
 
@@ -20,23 +26,16 @@ import ca.sheridancollege.consmatt.repositories.TimeRepository;
 public class HomeController { //Class starts
 	
 	static ArrayList<Task> tasks = new ArrayList<Task>(); 
-	static ArrayList<Time> times = new ArrayList<Time>(); 
-	
+
 	@Autowired
 	private TaskRepository taskRepo; 
-	
-	@Autowired
-	private TimeRepository timeRepo; 
+	 
 
 	@GetMapping("/") 
 	public String root() {   //Method to access root page
 		return "home.html";
 	} //Method ends
 	
-	@GetMapping("/login") 
-	public String login() { //Method to access root page, Security to be finished
-		return "login.html";
-	} //Method ends
 	
 	@GetMapping("/signUp") 
 	public String signup() { //Method to access signUp page, Security to be finished
@@ -58,8 +57,16 @@ public class HomeController { //Class starts
 		return"redirect:/addTask";
 	} //Method ends
 	
+
+
 	@GetMapping("/displayTasks")
-	public String displayTasks(Model model) {
+	public String loadTasksPage(Authentication authentication, Model model,  HttpServletRequest req, Principal principal) { 
+		String name = authentication.getName();  
+		
+		ArrayList<String> roles = new ArrayList<String>();
+		for (GrantedAuthority ga : authentication.getAuthorities()) {                                
+			roles.add(ga.getAuthority());
+		}
 		model.addAttribute("myTasksMon", taskRepo.getTaskMonday());
 		model.addAttribute("myTasksTue", taskRepo.getTaskTuesday());
 		model.addAttribute("myTasksWed", taskRepo.getTaskWednesday());
@@ -67,23 +74,10 @@ public class HomeController { //Class starts
 		model.addAttribute("myTasksFri", taskRepo.getTaskFriday());
 		model.addAttribute("myTasksSat", taskRepo.getTaskSaturday());
 		model.addAttribute("myTasksSun", taskRepo.getTaskSunday());
+	  
+	    System.out.println(principal.getName());
 		return "tasks.html";
-	} //Method ends
-	
-	@GetMapping("/addTime")
-	public String loadAddTimePage(Model model) { //Method to access addTask page
-		model.addAttribute("time", new Time());
-		return "addTime.html";
-	} //Method ends
-	
-	@PostMapping("/addTime")
-	public String addTime(@ModelAttribute Time time, Model model) { //Method to submit data on addTask page
-		System.out.println(time);
-		model.addAttribute("time", new Time());
-		times.add(time);
-		timeRepo.addTime(time);
-		return"redirect:/addTime";
-	} //Method ends
+		}
 	
 	
 	
