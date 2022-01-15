@@ -14,13 +14,13 @@ import ca.sheridancollege.consmatt.beans.Time;
 
 @Repository
 public class TimeRepository {
-	
+
 	@Autowired
 	private NamedParameterJdbcTemplate jdbc;
 
 	public void addTime(Time time) { //Method used to insert data from the addTask HTML form into the tasks SQL database
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "INSERT INTO times (monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)"; 
+		String query = "INSERT INTO times (monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES (:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)";
 		parameters.addValue("monday", time.getMonday());
 		parameters.addValue("tuesday", time.getTuesday());
 		parameters.addValue("wednesday", time.getWednesday());
@@ -30,8 +30,8 @@ public class TimeRepository {
 		parameters.addValue("sunday", time.getSunday());
 		jdbc.update(query, parameters);
 	} //Method ends
-	
-	
+
+
 	public ArrayList<Time> getTime() { //Method used to display information from tasks SQL database based on their respective days
 		ArrayList<Time> times = new ArrayList<Time>();
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
@@ -50,5 +50,5 @@ public class TimeRepository {
 		}
 		return times;
 	} //Method ends
-	
+
 }

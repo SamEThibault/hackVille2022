@@ -22,9 +22,6 @@ public class TaskRepository { //Class starts
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
 		
 		
-		
-		
-		
 		String query = "INSERT INTO tasks (name, lenght) VALUES (:name, :lenght)"; 
 		parameters.addValue("name", task.getName());
 		parameters.addValue("lenght", task.getLenght());
@@ -152,11 +149,26 @@ public class TaskRepository { //Class starts
 		}
 		return tasks;
 	} //Method ends
-	
-	
+
 //-----------------------------------------------------------End of "card" table methods---------------------------------------------------------------
 
-	
-	
+	public ArrayList<Task> getNames() {
+		ArrayList<Task> tasks = new ArrayList<Task>();
+		MapSqlParameterSource parameters = new MapSqlParameterSource();
+		String query = "SELECT name FROM tasks";
+		List<Map<String, Object>> rows = jdbc.queryForList(query, parameters);
+
+		for (Map<String, Object> row: rows) {
+			Task d = new Task();
+			d.setId((Integer)row.get("id"));
+			d.setName((String)row.get("name"));
+			d.setLenght((Double)row.get("lenght"));
+			d.setDay((String)row.get("day"));
+			tasks.add(d);
+		}
+		return tasks;
+	} //Method ends
+
+
 } //Class ends
 
