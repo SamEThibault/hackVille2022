@@ -1,3 +1,11 @@
+/**
+ * Hackathon 2022 TimeSavior project
+ * Backend by: Matthieu Constant and Samuel Emard-Thibault
+ * Frontend by: Kat and Haseen
+ * 
+ * This site is used to input tasks required to do 
+ * within a week and filter the importance/best time to do them 
+ */
 package ca.sheridancollege.consmatt;
 
 import org.springframework.boot.SpringApplication;

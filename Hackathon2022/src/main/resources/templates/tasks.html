@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Tasks</title>
+
+<style> 
+
+
+/** PLACE FOR STYLING**/
+
+body 
+{
+
+
+}
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+<h1>TODO add View tasks page </h1>
+<h1> View Tasks</h1>
+
+<a href="/">Home</a> 
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksMon}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksTue}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksWed}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksThu}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksFri}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksSat}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksSun}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+
+</tr>
+</table>
+
+
+
+</body>
+</html>
+
+
