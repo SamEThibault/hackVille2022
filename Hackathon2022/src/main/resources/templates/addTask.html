@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Tasks</title>
+
+
+<style> 
+
+
+/** PLACE FOR STYLING**/
+
+body 
+{
+
+
+}
+
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+<h1>TODO input add tasks form</h1>
+<h1>Add a Task </h1>
+
+<form action="/addTask" method="post" th:object="${task}">
+
+<div>Task name:</div> <input type="text" th:field="*{name}">
+<div>Lenght of task</div> <input type="text" th:field="*{lenght}"> 
+<div>Day due</div> <select id="days" name="days" th:field="*{day}">  
+  <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+              </select>
+<input type="submit" value="Submit Task">
+
+</form>
+
+
+<a href="/">Home</a>
+</body>
+</html>
