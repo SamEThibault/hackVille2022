@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Free Time</title>
+
+<style> 
+
+
+/** PLACE FOR STYLING**/
+
+body 
+{
+
+
+}
+
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+<h1>TODO add free time input form</h1>
+
+<form action="/addTime" method="post" th:object="${time}">
+
+<div>Monday</div> <input type="text" th:field="*{monday}">
+<div>Tuesday</div> <input type="text" th:field="*{tuesday}"> 
+<div>Wednesday</div> <input type="text" th:field="*{wednesday}"> 
+<div>Thursday</div> <input type="text" th:field="*{thursday}"> 
+<div>Friday</div> <input type="text" th:field="*{friday}"> 
+<div>Saturday</div> <input type="text" th:field="*{saturday}"> 
+<div>Sunday</div> <input type="text" th:field="*{sunday}"> 
+
+<input type="submit" value="Submit Time">
+
+</form>
+
+
+</body>
+</html>
