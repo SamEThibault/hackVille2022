@@ -24,7 +24,7 @@ public class TaskRepository { //Class starts
 		String query = "INSERT INTO tasks (name, lenght, day) VALUES (:name, :lenght, :day)";
 		parameters.addValue("name", task.getName());
 		parameters.addValue("lenght", task.getLenght());
-		parameters.addValue("day", task.getDay());
+		parameters.addValue("day", task.suggestion);
 		jdbc.update(query, parameters);
 	} //Method ends
 
