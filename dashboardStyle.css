@@ -1,0 +1,42 @@
+/*    Styling for dashboard.html   */
+body{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin-top: 20px;
+    padding: 2%;
+    background-color: rgb(226, 226, 226);
+    font-family: monospace;
+}
+
+.Directory{
+    display: grid;
+    width: 40%;
+    height: 35%;
+    /*  background-color: blanchedalmond;  */
+}
+
+.Directory .Hyperlinks{
+    display: grid;
+    grid-template-rows: repeat(3, 25%);
+}
+
+.PreviewSection{
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(2, 70%);
+    position: relative;
+    width: 70%;
+    /* background-color: rgb(206, 205, 255);  */
+}
+
+.PreviewSection .DayBox{
+    position: relative;
+    width: px;
+    height: 140px;
+    background: floralwhite;
+    float: left;
+    margin: 5px;
+    border:black 2px solid; 
+}
+
+
