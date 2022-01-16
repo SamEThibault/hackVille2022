@@ -22,5 +22,4 @@ public class Task implements Serializable { //Class starts, implements Serializa
 	private double lenght;
 	private String day;
 	
-	
 }

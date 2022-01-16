@@ -33,10 +33,9 @@ You have been logged out
 
 
 <h1> TODO add content</h1>
-<a href="/login">Login</a>
 <a href="/signUp">Sign up</a>
 <a href="/addTask">Add Tasks</a>   <!-- Links for going to each page, they can be added into a list to make a top navigation bar -->
-<a href="/displayTasks">View Tasks</a>
+
 
 <div sec:authorize="isAuthenticated()">
 <form method="post" th:action="@{/logout}">
@@ -44,6 +43,90 @@ You have been logged out
 </form>  
 </div>
 
-</form> 
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksMon}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksTue}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksWed}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksThu}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+ 
+</tr>
+</table>
+
+<br>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+</tr>
+<tr th:each="task : ${myTasksFri}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+ 
 </body>
 </html>

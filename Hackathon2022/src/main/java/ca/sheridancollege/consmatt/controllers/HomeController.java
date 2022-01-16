@@ -31,7 +31,12 @@ public class HomeController { //Class starts
 	 
 
 	@GetMapping("/") 
-	public String root() {   //Method to access root page
+	public String root(@ModelAttribute Task task, Model model) {   //Method to access root page
+		model.addAttribute("myTasksMon", taskRepo.getTaskMonday());
+		model.addAttribute("myTasksTue", taskRepo.getTaskTuesday());
+		model.addAttribute("myTasksWed", taskRepo.getTaskWednesday());
+		model.addAttribute("myTasksThu", taskRepo.getTaskThursday());   //Method to access displayTasks page, model.addAttribute is what refreshes the tables
+		model.addAttribute("myTasksFri", taskRepo.getTaskFriday());
 		return "home.html";
 	} //Method ends
 	
@@ -75,8 +80,6 @@ public class HomeController { //Class starts
 	    System.out.println(principal.getName());
 		return "tasks.html";
 		}
-	
-
 	
 	@GetMapping("/delete/{id}") 
 	public String deleteEmployee(@PathVariable int id, Model model) {
