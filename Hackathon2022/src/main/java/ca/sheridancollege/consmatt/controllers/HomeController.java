@@ -18,9 +18,6 @@ import ca.sheridancollege.consmatt.beans.Task;
 import ca.sheridancollege.consmatt.repositories.TaskRepository;
 
 
-
-
-
 @Controller
 public class HomeController { //Class starts
 	
@@ -89,7 +86,7 @@ public class HomeController { //Class starts
 		model.addAttribute("myTasksWed", taskRepo.getTaskWednesday());
 		model.addAttribute("myTasksThu", taskRepo.getTaskThursday());
 		model.addAttribute("myTasksFri", taskRepo.getTaskFriday());
-		return "tasks.html";
+		return "redirect:/";
 	}
 	
 	
