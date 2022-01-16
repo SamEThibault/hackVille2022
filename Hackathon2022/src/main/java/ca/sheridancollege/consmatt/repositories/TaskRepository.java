@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import ca.sheridancollege.consmatt.logic.Logic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -20,7 +21,12 @@ public class TaskRepository { //Class starts
 	
 	public void addTask(Task task) { //Method used to insert data from the addTask HTML form into the tasks SQL database
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		
+
+		/*-------------------------------------------------------------*/
+		Logic logic = new Logic(); // to test, should print to console: the availability times for each day
+		logic.Output();
+		/*-------------------------------------------------------------*/
+
 		String query = "INSERT INTO tasks (name, lenght) VALUES (:name, :lenght)"; 
 		parameters.addValue("name", task.getName());
 		parameters.addValue("lenght", task.getLenght());
