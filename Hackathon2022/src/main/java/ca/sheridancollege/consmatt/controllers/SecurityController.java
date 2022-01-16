@@ -39,7 +39,7 @@ public class SecurityController {
 		User user = userRepo.findUserAccount(username);
 		userRepo.addRole(user.getUserId(), 2); //User
 
-		return "home.html";
+		return "login.html";
 	}
 	
 	

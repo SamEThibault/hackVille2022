@@ -26,9 +26,9 @@ public class HomeController { //Class starts
 	// hard coded availability objects specifying available times grouped with weekday title
 	Avail mon = new Avail("Monday", 0);
 	Avail tue = new Avail("Tuesday", 2);
-	Avail wed = new Avail("Wednesday", 2);
-	Avail thu = new Avail("Thursday", 2);
-	Avail fri = new Avail("Friday", 2);
+	Avail wed = new Avail("Wednesday", 3);
+	Avail thu = new Avail("Thursday", 6);
+	Avail fri = new Avail("Friday", 7);
 
 	// availability object array to store these instances
 	Avail[] availArray = {mon, tue, wed, thu, fri};
