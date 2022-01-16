@@ -23,7 +23,7 @@ public class TaskRepository { //Class starts
 		String query = "INSERT INTO tasks (name, lenght, day) VALUES (:name, :lenght, :day)"; 
 		parameters.addValue("name", task.getName());
 		parameters.addValue("lenght", task.getLenght());
-		parameters.addValue("day", task.getDay());
+		parameters.addValue("day", task.suggestion);
 		jdbc.update(query, parameters);
 	} //Method ends
 	
@@ -114,39 +114,7 @@ public class TaskRepository { //Class starts
 		return tasks;
 	} //Method ends
 	
-	public ArrayList<Task> getTaskSaturday() {
-		ArrayList<Task> tasks = new ArrayList<Task>();
-		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "SELECT * FROM tasks WHERE day ='Saturday'";
-		List<Map<String, Object>> rows = jdbc.queryForList(query, parameters);
-		
-		for (Map<String, Object> row: rows) {
-			Task d = new Task();
-			d.setId((Integer)row.get("id"));
-			d.setName((String)row.get("name"));
-			d.setLenght((Double)row.get("lenght"));
-			d.setDay((String)row.get("day"));
-			tasks.add(d);
-		}
-		return tasks;
-	} //Method ends
-	
-	public ArrayList<Task> getTaskSunday() {
-		ArrayList<Task> tasks = new ArrayList<Task>();
-		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "SELECT * FROM tasks WHERE day ='Sunday'";
-		List<Map<String, Object>> rows = jdbc.queryForList(query, parameters);
-		
-		for (Map<String, Object> row: rows) {
-			Task d = new Task();
-			d.setId((Integer)row.get("id"));
-			d.setName((String)row.get("name"));
-			d.setLenght((Double)row.get("lenght"));
-			d.setDay((String)row.get("day"));
-			tasks.add(d);
-		}
-		return tasks;
-	} //Method ends
+
 	
 	
 //-----------------------------------------------------------End of "card" table methods---------------------------------------------------------------
