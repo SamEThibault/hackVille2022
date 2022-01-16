@@ -5,20 +5,74 @@
 <title>Home</title>
 
 <style> 
-
-
-/** PLACE FOR STYLING**/
-
-body 
-{
-
-
+body{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin-top: 20px;
+    padding: 2%;
+    background-color: rgb(226, 226, 226);
+    font-family: monospace;
 }
 
+.Directory{
+    display: grid;
+    width: 40%;
+    height: 35%;
+    /*  background-color: blanchedalmond;  */
+}
 
+.Directory .Hyperlinks{
+    display: grid;
+    grid-template-rows: repeat(3, 25%);
+}
 
+.PreviewSection{
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(2, 70%);
+    position: relative;
+    width: 70%;
+    /* background-color: rgb(206, 205, 255);  */
+}
 
+.PreviewSection .DayBox{
+    position: relative;
+    height: 140px;
+    background: ghostwhite;
+    float: left;
+    margin: 5px;
+    border:black 2px solid; 
+    padding-left: 2%;
+}
 
+.logout {
+position: absolute;
+right:    0;
+bottom:   0;
+background-color: white;
+width: 150px;
+height: 80px;
+ font-family: monospace;
+}
+
+table {
+margin-top: -2%;
+text-align: center;
+border-spacing: 5px;
+}
+th{
+ width: 140px;
+}
+h3{
+ font-size: 20px;
+}
+h1{
+font-size: 60px;
+}
+.links {
+font-size: 20px;
+padding: 5px;
+}
 
 
 </style>
@@ -27,23 +81,128 @@ body
 </head>
 <body>
 
-<div th:if="${param.logout}" style="color:red;">
-You have been logged out 
+<!-- This is the division for directory -->
+<div class="Directory">
+    <h1>Dashboard</h1>
+    <div class="Hyperlinks">
+        <a class="links" href="">To-Do</a>
+        <a class="links" href="">Recommended</a>
+        <a class="links" href="/addTask">Add another task</a>
+    </div>
 </div>
 
+<!-- This is the division for the boxes of each day -->
+<div class="PreviewSection">
 
-<h1> TODO add content</h1>
-<a href="/login">Login</a>
-<a href="/signUp">Sign up</a>
-<a href="/addTask">Add Tasks</a>   <!-- Links for going to each page, they can be added into a list to make a top navigation bar -->
-<a href="/displayTasks">View Tasks</a>
+    <div class="DayBox">
+        <h3>Monday</h3>
+        
+        
+        <table border="0">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+<th>Delete</th>
+</tr>
+<tr th:each="task : ${myTasksMon}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+      
+    </div>
+
+    <div class="DayBox">
+        <h3>Tuesday</h3>
+         <table border="0">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+<th>Delete</th>
+</tr>
+<tr th:each="task : ${myTasksTue}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+    </div>
+
+    <div class="DayBox">
+        <h3>Wednesday</h3>
+       <table border="0">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+<th>Delete</th>
+</tr>
+<tr th:each="task : ${myTasksWed}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+    </div>
+
+    <div class="DayBox">
+        <h3>Thursday</h3>
+        <table border="0">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+<th>Delete</th>
+</tr>
+<tr th:each="task : ${myTasksThu}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+ 
+</tr>
+</table>
+    </div>
+
+    <div class="DayBox">
+        <h3>Friday</h3>
+       <table border="0">
+<tr>
+<th>Name</th>
+<th>Lenght Of Task</th>
+<th>Day to do</th>
+<th>Delete</th>
+</tr>
+<tr th:each="task : ${myTasksFri}">
+<td th:text=${task.name}> </td>
+<td th:text=${task.lenght}> </td>
+<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
+</tr>
+</table>
+    </div>
+</div>
+
 
 <div sec:authorize="isAuthenticated()">
 <form method="post" th:action="@{/logout}">
-<input type="submit" value="Logout">
+<input class="logout" type="submit" value="Logout">
 </form>  
 </div>
 
-</form> 
+
+
+
+ 
 </body>
 </html>

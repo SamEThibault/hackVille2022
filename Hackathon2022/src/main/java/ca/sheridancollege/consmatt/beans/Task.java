@@ -2,13 +2,13 @@ package ca.sheridancollege.consmatt.beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-<<<<<<< HEAD
+
 
 import ca.sheridancollege.consmatt.logic.Availability;
 import ca.sheridancollege.consmatt.logic.Tasks;
 import ca.sheridancollege.consmatt.repositories.TaskRepository;
-=======
->>>>>>> main
+
+import ca.sheridancollege.consmatt.repositories.TimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -28,8 +28,9 @@ public class Task implements Serializable { //Class starts, implements Serializa
 	private String name;
 	private double lenght;
 	private String day;
+	public String suggestion;
 	
-<<<<<<< HEAD
+
 	static ArrayList<Time> times = new ArrayList<Time>();
 	
 	@Autowired
@@ -45,7 +46,5 @@ public class Task implements Serializable { //Class starts, implements Serializa
 
 		return day;
 	}
-=======
->>>>>>> main
-	
+
 }

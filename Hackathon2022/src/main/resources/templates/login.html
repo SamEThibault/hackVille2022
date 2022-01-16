@@ -6,19 +6,48 @@
 
 <style> 
 
+body{
+    background-color: rgb(216, 216, 216);
+    font-family: monospace;
+}
 
-/** PLACE FOR STYLING**/
+.signInBox{
+    margin-top: 100px;
+    display: grid;
+    background-color: silver;
+    margin-left: 30%;
+    margin-right: 15%;
+    padding-left: 1%;
+    margin-right: 60%;
+    border:black 2px solid;
+    height: 50px;
+}
 
-body 
-{
+.signInForm{
+    display: grid;
+    background-color: ghostwhite;
+    margin-left: 30%;
+    margin-right: 40%;
+    padding-left: 3%;
+    border:black 2px solid;
+    height:200px;
+}
 
+.signInForm .inputField{
+    display: grid;
+    padding-top: 10px;
+    margin-right: 20%;
+    margin-top: 10px;
 
 }
 
-
-
-
-
+img {
+position: absolute;
+top: 130px;
+left: 300px;
+height: 200px;
+width: 200px;
+}
 
 
 </style> 
@@ -26,17 +55,35 @@ body
 
 </head>
 <body>
-<h1> TODO Style login form</h1>
 
-<div class="incorrect" th:if="${param.error}" style="color:red;">
-Invalid Username or Password.
+<div th:if="${param.logout}" style="color:red;">
+You have been logged out 
 </div>
 
-<form th:action="@{/login}" method="post">
-Username: <input type="text" name="username" placeholder="Username" required autofocus> <br>
-Password: <input type="password"  name="password" placeholder="Password" required> <br> 
-		<input class="submit" type="submit" value="login"> 
-</form>
-<li><a th:href="@{/}">Home</a> </li>
+    <div class="signInBox"><h2>SIGN IN</h2></div>
+
+    <div class="signInForm">
+        <form th:action="@{/login}" method="post">
+            <div class="inputField">
+               <div class="incorrect" th:if="${param.error}" style="color:red;">
+Invalid Username or Password.
+</div>
+               Username: <input type="text" name="username" placeholder="Username" required autofocus> <br>
+            </div>
+
+            <div class="inputField">
+                Password: <input type="password"  name="password" placeholder="Password" required> <br>
+            </div>
+            <input class="submit" type="submit" value="login"> 
+        </form>
+        <a href="/signUp">Sign up</a>
+    </div>
+    
+    
+ <img src="https://blogger.googleusercontent.com/img/a/AVvXsEh-eolPT5A1K6I7UScAgCFanJSPeXZRknArL23LTTmGf88EzhVEEuCwhLD1L7P5fL1IhOCV6KkcVO6zXl4UBNuVsE-xID82-nCqJ7UGc_gePocDQ9Q7BvbERsoruyAgiafsU81xsmnndrNARQ-798IS9o_NlCXnQwkqsLnKgM9xjIubA8bJ91vWAM8S=s288">
+
+
+
+
 </body>
 </html>

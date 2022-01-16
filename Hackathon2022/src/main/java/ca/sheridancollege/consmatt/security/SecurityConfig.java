@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/signUp").permitAll() 
 		.antMatchers("/registerUser").permitAll() //Get Request
 		.antMatchers(HttpMethod.POST, "/registerUser").permitAll() //Post Request
-		.antMatchers("/").permitAll() 
+		.antMatchers("/").hasAnyRole("ADMIN", "USER")
 		.antMatchers("/h2-console/**").permitAll()
 		.anyRequest().authenticated()
 	.and()
@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.invalidateHttpSession(true)
 			.clearAuthentication(true)
 			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-			.logoutSuccessUrl("/?logout")
+			.logoutSuccessUrl("/login")
 			.permitAll()
 	.and()
 			.exceptionHandling()

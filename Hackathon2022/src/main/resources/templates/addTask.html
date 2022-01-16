@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Add Tasks</title>
 
 
 <style> 
 
+body{
+    background-color: rgb(216, 216, 216);
+    margin-top: 5%;
+    margin-left: 5%;
+    font-family: monospace;
+}
 
-/** PLACE FOR STYLING**/
+.headlineBox{
+    display: grid;
+    border:black 2px solid;
+    width: 49%;
+    padding-left: 1%;
+}
 
-body 
-{
+.taskAddingScreen{
+    display: grid;
+    background-color: ghostwhite;
+    height: 550px;
+    border:black 2px solid;
+    margin-right: 5%;
+}
+
+.taskAddingScreen .navigationBar{
+    display: grid;
+    width: 30%;
+    margin-left: 60%;
+    margin-top: -402px;
+}
+
+.taskAddingScreen .navigationBar .dashboardDirectory{
+    display: grid;
+    background-color: ghostwhite;
+    border:black 2px solid;
+    margin-bottom: 100px;
+    padding-left: 3%;
+}
 
 
+
+.taskAddingScreen .form{
+    display: grid;
+    background-color: ghostwhite;
+    width: 35%;
+    height: 300px;
+    margin-top: 5%;
+    margin-left: 12%;
+    margin-bottom: 5%;
+    padding-left: 2%;
+    border:black 2px solid;
+
+}
+
+.taskAddingScreen .form .inputField{
+    display: grid;
+    margin-bottom: 130%;
+    margin-right: 10%;
+}
+
+.taskAddingScreen .form .inputField .taskNameField{
+    margin-bottom: 10%;
+
+}
+
+.taskAddingScreen .form .inputField .taskLengthField{
+    margin-bottom: 10%;
+}
+
+.taskAddingScreen .form .inputField .dueDayField{
+    margin-bottom: 10%;
+}
+
+.taskAddingScreen .form .inputField .submitButton{
+    margin-top: 25px;
+}
+.logout {
+width: 100%;
+border-color:white;
 }
 
 
@@ -27,25 +97,61 @@ body
 
 </head>
 <body>
-<h1>TODO input add tasks form</h1>
-<h1>Add a Task </h1>
 
-<form action="/addTask" method="post" th:object="${task}">
+<div class="headlineBox">
+    <h1>•Task Adding Screen</h1>
+</div>
 
+<div class="taskAddingScreen">
+    <div class="form">
+        <h2>Add a task:</h2>
+        <div class="inputField">
+        
+        <form action="/addTask" method="post" th:object="${task}">
+        
+        
+<div class="taskNameField">
 <div>Task name:</div> <input type="text" th:field="*{name}">
-<div>Lenght of task</div> <input type="text" th:field="*{lenght}"> 
-<div>Day due</div> <select id="days" name="days" th:field="*{day}">  
+ </div>
+ 
+ <div class="taskLengthField">
+<div>Task Length:</div> <input type="text" th:field="*{lenght}"> 
+</div>
+
+<div class="dueDayField">
+<div>Due Date:</div> <select id="days" name="days" th:field="*{day}">  
   <option value="Monday">Monday</option>
     <option value="Tuesday">Tuesday</option>
       <option value="Wednesday">Wednesday</option>
         <option value="Thursday">Thursday</option>
           <option value="Friday">Friday</option>
               </select>
+                </div>
+                
+         <div class="submitButton">        
 <input type="submit" value="Submit Task">
+  </div>
+  
+  </form>
+  
+        </div>
+    </div>
 
-</form>
+    <div class="navigationBar">
+        <div class="dashboardDirectory">
+            <a th:href="@{/}"><h3>• Go To Dashboard</h3></a>
+        </div>
 
+        <div class="dashboardDirectory">
+            <a th:href="@{/}"><h3>• Recommended</h3></a>
+        </div>
 
-<a href="/">Home</a>
+        <div class="dashboardDirectory">
+        	<input class="logout" type="submit" value="Logout">
+        </div>
+        
+    </div>
+
+</div>
 </body>
 </html>
