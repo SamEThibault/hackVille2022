@@ -20,7 +20,7 @@ public class TaskRepository { //Class starts
 	
 	public void addTask(Task task) { //Method used to insert data from the addTask HTML form into the tasks SQL database
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "INSERT INTO tasks (name, lenght) VALUES (:name, :lenght)"; 
+		String query = "INSERT INTO tasks (name, lenght, day) VALUES (:name, :lenght, :day)"; 
 		parameters.addValue("name", task.getName());
 		parameters.addValue("lenght", task.getLenght());
 		parameters.addValue("day", task.getDay());
