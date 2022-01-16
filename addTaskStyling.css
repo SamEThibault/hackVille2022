@@ -1,0 +1,22 @@
+
+body{
+    background-color: rgb(216, 216, 216);
+    margin-top: 5%;
+    margin-left: 5%;
+    font-family: monospace;
+}
+
+.weekdays{
+    margin-top: 4%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+
+}
+
+.weekdays .weekday{
+    border:black 2px solid;
+    height: 900%;
+    margin-right: 10%;
+    background-color: floralwhite;
+    padding-left: 3%;
+}
