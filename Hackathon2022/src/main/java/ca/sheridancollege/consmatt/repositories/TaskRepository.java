@@ -19,18 +19,17 @@ public class TaskRepository { //Class starts
 	@Autowired
 	private NamedParameterJdbcTemplate jdbc;
 	
-	public void addTask(Task task) { //Method used to insert data from the addTask HTML form into the tasks SQL database
+	public void addTask(Task task, String suggestion) { //Method used to insert data from the addTask HTML form into the tasks SQL database
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
 
 		/*-------------------------------------------------------------*/
-//		Logic logic = new Logic(); // to test, should print to console: the availability times for each day
-//		logic.Output();
+
 		/*-------------------------------------------------------------*/
 
-		String query = "INSERT INTO tasks (name, lenght) VALUES (:name, :lenght)"; 
+		String query = "INSERT INTO tasks (name, lenght, day) VALUES (:name, :lenght, :day)";
 		parameters.addValue("name", task.getName());
 		parameters.addValue("lenght", task.getLenght());
-		parameters.addValue("day", task.getDay());
+		parameters.addValue("day", suggestion);
 		jdbc.update(query, parameters);
 	} //Method ends
 	

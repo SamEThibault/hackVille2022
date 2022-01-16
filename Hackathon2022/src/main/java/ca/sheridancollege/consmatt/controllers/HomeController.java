@@ -69,15 +69,15 @@ public class HomeController { //Class starts
 
 		Logic callLogic = new Logic(task, availArray);
 		String taskSuggest = callLogic.Output(); // this should call the logic routine
-		suggestions[count] = taskSuggest;
-		count++;
+		suggestions[count] = taskSuggest; // add the suggested day to suggestion string array
+		count++; // array index counter increments
 
 
 		//Method to submit data on addTask page
 		System.out.println(task);
 		model.addAttribute("task", new Task());
 		tasks.add(task);
-		taskRepo.addTask(task);
+		taskRepo.addTask(task, suggestions[count]);
 		return"redirect:/addTask";
 	} //Method ends
 	
