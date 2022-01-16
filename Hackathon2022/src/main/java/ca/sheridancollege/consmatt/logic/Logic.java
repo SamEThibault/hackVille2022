@@ -1,6 +1,6 @@
 package ca.sheridancollege.consmatt.logic;
 
-// how this shit is gonna work:
+// how this is gonna work:
 // instantiate logic object with 2 attributes: a task object, and an array of availability objects.
 public class Logic {
 
