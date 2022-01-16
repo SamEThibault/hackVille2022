@@ -21,6 +21,7 @@ public class Task implements Serializable { //Class starts, implements Serializa
 	private String name;
 	private double lenght;
 	private String day;
+	public String suggestion;
 	
 	
 }

@@ -23,8 +23,8 @@ public class TaskRepository { //Class starts
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
 
 		/*-------------------------------------------------------------*/
-		Logic logic = new Logic(); // to test, should print to console: the availability times for each day
-		logic.Output();
+//		Logic logic = new Logic(); // to test, should print to console: the availability times for each day
+//		logic.Output();
 		/*-------------------------------------------------------------*/
 
 		String query = "INSERT INTO tasks (name, lenght) VALUES (:name, :lenght)"; 
