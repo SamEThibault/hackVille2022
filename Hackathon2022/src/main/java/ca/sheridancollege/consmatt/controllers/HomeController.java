@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import ca.sheridancollege.consmatt.beans.Task;
 import ca.sheridancollege.consmatt.repositories.TaskRepository;
 
@@ -72,12 +71,24 @@ public class HomeController { //Class starts
 		model.addAttribute("myTasksWed", taskRepo.getTaskWednesday());
 		model.addAttribute("myTasksThu", taskRepo.getTaskThursday());   //Method to access displayTasks page, model.addAttribute is what refreshes the tables
 		model.addAttribute("myTasksFri", taskRepo.getTaskFriday());
-		model.addAttribute("myTasksSat", taskRepo.getTaskSaturday());
-		model.addAttribute("myTasksSun", taskRepo.getTaskSunday());
 	  
 	    System.out.println(principal.getName());
 		return "tasks.html";
 		}
+	
+
+	
+	@GetMapping("/delete/{id}") 
+	public String deleteEmployee(@PathVariable int id, Model model) {
+		taskRepo.deleteTask(id);
+		model.addAttribute("myTasksMon", taskRepo.getTaskMonday());
+		model.addAttribute("myTasksTue", taskRepo.getTaskTuesday());
+		model.addAttribute("myTasksWed", taskRepo.getTaskWednesday());
+		model.addAttribute("myTasksThu", taskRepo.getTaskThursday());
+		model.addAttribute("myTasksFri", taskRepo.getTaskFriday());
+		return "tasks.html";
+	}
+	
 	
 	
 	

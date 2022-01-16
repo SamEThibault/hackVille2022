@@ -23,8 +23,7 @@ INSERT INTO tasks (name, lenght, day) VALUES
 ('English Quiz', 7, 'Wednesday'),
 ('Physics Lab', 7, 'Friday'),
 ('French Book', 7, 'Friday'),
-('Chemistry Notes', 7, 'Saturday'),
-('Catch up in Java', 7, 'Friday'),
-('Java Homework', 7, 'Sunday');
+('Catch up in Java', 7, 'Friday');
+
 
 

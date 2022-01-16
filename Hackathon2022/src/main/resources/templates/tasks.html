@@ -17,10 +17,6 @@ body
 
 
 
-
-
-
-
 </style>
 
 </head>
@@ -42,6 +38,8 @@ body
 <td th:text=${task.name}> </td>
 <td th:text=${task.lenght}> </td>
 <td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
 </tr>
 </table>
 
@@ -57,6 +55,8 @@ body
 <td th:text=${task.name}> </td>
 <td th:text=${task.lenght}> </td>
 <td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
 </tr>
 </table>
 
@@ -72,6 +72,8 @@ body
 <td th:text=${task.name}> </td>
 <td th:text=${task.lenght}> </td>
 <td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+
 </tr>
 </table>
 
@@ -87,6 +89,8 @@ body
 <td th:text=${task.name}> </td>
 <td th:text=${task.lenght}> </td>
 <td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
+ 
 </tr>
 </table>
 
@@ -102,39 +106,13 @@ body
 <td th:text=${task.name}> </td>
 <td th:text=${task.lenght}> </td>
 <td th:text=${task.day}> </td>
-</tr>
-</table>
-
-<br>
-
-<table border="1">
-<tr>
-<th>Name</th>
-<th>Lenght Of Task</th>
-<th>Day to do</th>
-</tr>
-<tr th:each="task : ${myTasksSat}">
-<td th:text=${task.name}> </td>
-<td th:text=${task.lenght}> </td>
-<td th:text=${task.day}> </td>
-</tr>
-</table>
-
-<br>
-
-<table border="1">
-<tr>
-<th>Name</th>
-<th>Lenght Of Task</th>
-<th>Day to do</th>
-</tr>
-<tr th:each="task : ${myTasksSun}">
-<td th:text=${task.name}> </td>
-<td th:text=${task.lenght}> </td>
-<td th:text=${task.day}> </td>
+<td> <a class="delete" href="" th:href="@{/delete/{id}(id=${task.id})}"> DELETE </a> </td>
 
 </tr>
 </table>
+
+
+
 
 
 
