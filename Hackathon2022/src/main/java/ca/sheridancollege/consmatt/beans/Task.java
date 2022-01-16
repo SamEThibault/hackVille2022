@@ -2,19 +2,22 @@ package ca.sheridancollege.consmatt.beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+<<<<<<< HEAD
 
 import ca.sheridancollege.consmatt.logic.Availability;
 import ca.sheridancollege.consmatt.logic.Tasks;
 import ca.sheridancollege.consmatt.repositories.TaskRepository;
+=======
+>>>>>>> main
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ca.sheridancollege.consmatt.repositories.TimeRepository;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Data
+ @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Task implements Serializable { //Class starts, implements Serializable but TBH IDFK why, it doesn't seem to matter though
@@ -26,6 +29,7 @@ public class Task implements Serializable { //Class starts, implements Serializa
 	private double lenght;
 	private String day;
 	
+<<<<<<< HEAD
 	static ArrayList<Time> times = new ArrayList<Time>();
 	
 	@Autowired
@@ -41,5 +45,7 @@ public class Task implements Serializable { //Class starts, implements Serializa
 
 		return day;
 	}
+=======
+>>>>>>> main
 	
 }

@@ -21,13 +21,18 @@ public class TaskRepository { //Class starts
 	public void addTask(Task task) { //Method used to insert data from the addTask HTML form into the tasks SQL database
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> main
 		String query = "INSERT INTO tasks (name, lenght) VALUES (:name, :lenght)"; 
 		parameters.addValue("name", task.getName());
 		parameters.addValue("lenght", task.getLenght());
 		parameters.addValue("day", task.getDay());
 		jdbc.update(query, parameters);
 	} //Method ends
+	
+	
 	
 	
 	//--------------------Anything within these lines are used to add data to the tables depending on their respective day of the week-----------------
@@ -116,6 +121,7 @@ public class TaskRepository { //Class starts
 		return tasks;
 	} //Method ends
 	
+<<<<<<< HEAD
 	public ArrayList<Task> getTaskSaturday() {
 		ArrayList<Task> tasks = new ArrayList<Task>();
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
@@ -159,6 +165,19 @@ public class TaskRepository { //Class starts
 		List<Map<String, Object>> rows = jdbc.queryForList(query, parameters);
 
 		for (Map<String, Object> row: rows) {
+=======
+	
+//-----------------------------------------------------------End of "card" table methods---------------------------------------------------------------
+
+	public Task getTaskById(int id) { 
+		ArrayList<Task> tasks = new ArrayList<Task>();
+		MapSqlParameterSource parameters = new MapSqlParameterSource();
+		String query ="SELECT * FROM tasks WHERE id=:id";
+		parameters.addValue("id", id);
+		List<Map<String, Object>> rows = jdbc.queryForList(query, parameters);
+		
+		for(Map<String, Object> row:rows) {
+>>>>>>> main
 			Task d = new Task();
 			d.setId((Integer)row.get("id"));
 			d.setName((String)row.get("name"));
@@ -166,9 +185,27 @@ public class TaskRepository { //Class starts
 			d.setDay((String)row.get("day"));
 			tasks.add(d);
 		}
+<<<<<<< HEAD
 		return tasks;
 	} //Method ends
 
 
+=======
+		if(tasks.size() == 1) {
+			return tasks.get(0);
+		}else {
+			return null;
+		}
+	}
+	
+	
+	public void deleteTask(int id) {
+		MapSqlParameterSource parameters = new MapSqlParameterSource(); 
+		String query = "DELETE FROM tasks WHERE id=:id";
+		parameters.addValue("id", id);
+		jdbc.update(query, parameters);
+	}
+	
+>>>>>>> main
 } //Class ends
 

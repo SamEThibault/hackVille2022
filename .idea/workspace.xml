@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa0848c9-c3a8-419d-b47c-cb1f4518871a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/logic/Availability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/logic/Logic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/logic/Tasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon2022/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon2022/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/beans/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/beans/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/repositories/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/repositories/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/repositories/TimeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon2022/src/main/java/ca/sheridancollege/consmatt/repositories/TimeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
