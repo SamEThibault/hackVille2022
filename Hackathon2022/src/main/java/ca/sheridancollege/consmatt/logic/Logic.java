@@ -1,2 +1,4 @@
-package ca.sheridancollege.consmatt.logic;public class Logic {
+package ca.sheridancollege.consmatt.logic;
+
+public class Logic {
 }
