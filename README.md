@@ -2,7 +2,7 @@
 The official Hackville Repository for TimeSavior
 
 
-Inspiration
+<h1>Inspiration</h1>
 
 Our inspiration came from the recent chaotic organizational challenges of online education while juggling multiple courses.
 What it does
